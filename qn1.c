@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <math.h>
 int main() {
     int t;
     scanf("%d", &t);
@@ -13,8 +12,8 @@ int main() {
         for (int i = 0; i < q; i++) {
             int x;
             scanf("%d", &x);    //take input for enchantment
-            int power = (int)pow(2, x);       // 2^x
-            int add = (int)pow(2, x - 1);     // 2^(x - 1)
+            int power = 1 << x;
+            int add = 1 << (x - 1);     // 2^(x - 1)
             for (int j = 0; j < n; j++) {
                 if (a[j] % power == 0) {      //add if divisible by power
                     a[j] += add;
